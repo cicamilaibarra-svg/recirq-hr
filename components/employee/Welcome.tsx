@@ -34,6 +34,7 @@ export default function Welcome({
       />
 
       <button
+        type="button"
         onClick={onContinue}
         className="w-full rounded-2xl bg-amber-400 py-4 font-medium hover:bg-amber-500 transition"
       >

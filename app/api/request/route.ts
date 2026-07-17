@@ -1,23 +1,14 @@
 import { NextResponse } from "next/server";
-import { createRequest } from "@/lib/services/requestService";
 
-export async function POST(req: Request) {
-  try {
-    const body = await req.json();
+export async function POST(request: Request) {
+  console.log("✅ API route reached");
 
-    const request = await createRequest(body);
+  const body = await request.json();
 
-    return NextResponse.json(request);
-  } catch (error) {
-    console.error(error);
+  console.log(body);
 
-    return NextResponse.json(
-      {
-        error: "Unable to create request."
-      },
-      {
-        status: 500
-      }
-    );
-  }
+  return NextResponse.json({
+    success: true,
+    reference: "TEST-12345",
+  });
 }

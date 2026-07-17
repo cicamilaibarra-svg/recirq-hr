@@ -10,19 +10,26 @@ export default function EmployeePage() {
   const [name, setName] = useState("");
   const [started, setStarted] = useState(false);
 
+  function handleContinue() {
+    if (name.trim().length === 0) {
+      alert("Please enter your name.");
+      return;
+    }
+
+    setStarted(true);
+  }
+
   if (!started) {
     return (
       <main className="min-h-screen flex items-center justify-center bg-stone-50 px-6">
         <div className="w-full max-w-md rounded-3xl border border-stone-200 bg-white p-10 shadow-sm">
+
           <Welcome
             name={name}
             onNameChange={setName}
-            onContinue={() => {
-              if (name.trim() !== "") {
-                setStarted(true);
-              }
-            }}
+            onContinue={handleContinue}
           />
+
         </div>
       </main>
     );
@@ -30,6 +37,7 @@ export default function EmployeePage() {
 
   return (
     <main className="min-h-screen flex items-center justify-center bg-stone-50 px-6">
+
       <div className="w-full max-w-xl rounded-3xl border border-stone-200 bg-white p-10 shadow-sm">
 
         <h1 className="text-3xl font-semibold text-center">
@@ -45,6 +53,7 @@ export default function EmployeePage() {
         </div>
 
       </div>
+
     </main>
   );
 }

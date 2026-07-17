@@ -2,26 +2,28 @@ import RequestForm from "@/components/contact/RequestForm";
 
 export default function ContactHRPage() {
   return (
-    <main className="min-h-screen bg-stone-50 px-6 py-12 flex justify-center">
+    <main className="min-h-screen bg-stone-50 py-12 px-6">
+      <div className="mx-auto max-w-3xl">
 
-      <div className="w-full max-w-3xl rounded-3xl border border-stone-200 bg-white p-10 shadow-sm">
+        <div className="mb-10 text-center">
 
-        <h1 className="text-3xl font-semibold">
-          Contact HR
-        </h1>
+          <h1 className="text-4xl font-semibold">
+            Contact HR
+          </h1>
 
-        <p className="mt-3 text-stone-500">
-          Complete the form below and we'll review your request as soon as possible.
-        </p>
+          <p className="mt-3 text-stone-500">
+            Send a request, ask a question, or report an issue.
+          </p>
 
-        <div className="mt-10">
+        </div>
+
+        <div className="rounded-3xl border border-stone-200 bg-white p-8 shadow-sm">
 
           <RequestForm />
 
         </div>
 
       </div>
-
     </main>
   );
 }
