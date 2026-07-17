@@ -18,7 +18,6 @@ export default function RequestForm() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    console.log("Form submitted");
     alert("Form submitted");
 
     setLoading(true);
